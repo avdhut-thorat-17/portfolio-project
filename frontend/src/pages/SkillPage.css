@@ -1,0 +1,99 @@
+/* SkillPage.css */
+.skills-container {
+  background: transparent;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.skills-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  color: black; /* Text color before hover */
+  text-align: center;
+}
+
+.skill-card.expert {
+  border-left-color: #ff6a00;
+}
+
+.skill-card.proficient {
+  border-left-color: #0f2027;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: var(--skill-color);
+  color: white; /* Text color after hover */
+}
+
+.skill-card:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover:before {
+  width: 70px;
+  height: 70px;
+  top: -20px;
+  right: -20px;
+}
+
+.skill-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  text-align: center;
+  font-size: 1.25rem;
+  color: inherit;
+}
+
+.skill-level {
+  text-align: center;
+  color: inherit; /* Inherit the color from the skill-card */
+}
+
+.skill-card .skill-percentage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: inherit; /* Inherit the color from the skill-card */
+}
+
+.skill-card:hover .skill-percentage {
+  opacity: 1;
+}

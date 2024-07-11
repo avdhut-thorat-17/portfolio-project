@@ -1,0 +1,19 @@
+/* src/components/achievementsPage.css */
+
+.achievements-container {
+    background: transparent; /* Transparent background */
+  }
+  
+  .achievement-card {
+    position: relative;
+  }
+  
+  .achievement-card:hover .card-number {
+    transform: scale(1.5);
+    color: #000; /* Change number color on hover */
+  }
+  
+  .card-number {
+    transition: transform 0.3s, color 0.3s;
+  }
+  
