@@ -26,7 +26,7 @@ const ProjectCards = ({ projects }) => {
               backgroundPosition: 'center',
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div> {/* Increased opacity */}
+            <div className="absolute inset-0 bg-black opacity-70 rounded-lg"></div>
             <div className="relative z-10">
               <h2 className="text-xl font-bold text-white">{project.name}</h2>
               <p className="mt-2 text-gray-100">{project.description}</p>
