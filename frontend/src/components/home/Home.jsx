@@ -3,6 +3,7 @@ import githubIcon from '/github.png';
 import linkedinIcon from '/linkedin.png';
 import twitterIcon from '/twitter.png';
 import instagramIcon from '/instagram.png';
+import leetcodeIcon from '/leetcode.png'
 import Modal from 'react-modal';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -28,6 +29,10 @@ const links = [
   {
     imgSrc: instagramIcon,
     imgLink:'https://www.instagram.com/avdhut_thorat_17?igsh=MWJocHlrbzRpZmc4aQ%3D%3D&utm_source=qr'
+  },
+  {
+    imgSrc: leetcodeIcon,
+    imgLink:'https://leetcode.com/u/Avdhut_Thorat_17/'
   }
 ];
 
@@ -79,23 +84,22 @@ const Home = () => {
               MERN stack developer | Problem Solver
             </h3>
             <div className="flex justify-center mt-6">
-          <button
-            onClick={openModal}
-            className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-gray-700 transition duration-300"
-          >
-            View Resume
-          </button>
-        </div>
+              <button
+                onClick={openModal}
+                className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-gray-700 transition duration-300"
+              >
+                View Resume
+              </button>
+            </div>
           </div>
         </div>
         <div className="mt-6 flex justify-center space-x-4 mt-5 mb-5 fade-in">
           {links.map((link, index) => (
             <a key={index} href={link.imgLink} className="hover:scale-110 transition-transform">
-              <img className="h-10 w-10 md:h-12 md:w-12 rounded-full" src={link.imgSrc} alt="" />
+              <img className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-cover" src={link.imgSrc} alt="" />
             </a>
           ))}
         </div>
-        
       </header>
 
       <Modal
@@ -109,7 +113,7 @@ const Home = () => {
           Close
         </button>
         <div className="pdf-container">
-          <Worker workerUrl={`https://unpkg.com/pdfjs-dist/build/pdf.worker.min.js`}>
+          <Worker workerUrl="/pdf.worker.min.js">
             <Viewer fileUrl="https://drive.google.com/file/d/1C51pdZJOm9xSGaazpuYPq3XXPGByHwFM/view" />
           </Worker>
         </div>
